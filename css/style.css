@@ -1,5 +1,204 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    background: magenta;
+    display: flex;
+    margin: 3rem;
+    height: 100vh;
+}
+.todo_app-container{
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    background: yellow;
+    padding: 3rem;
+}
+
+.todo_app-header{
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.todo_app-header-date{
+    font-size: 60px;
+    padding: 0.8rem 0.8rem 0rem 0.8rem;
+}
+
+
+
+.todo_app-header-time{
+    font-size: 40px;
+    padding: 0.8rem;
+}
+
+.todo_app-header-quote{
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.todo_app-header-quote input{
+    border: none;
+    font-size: 40px;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-family: auto;
+    width: 100%;
+    text-align: center;
+    word-break: break-word;
+    padding: 0.8rem 0.8rem 0 0.8rem;
+
+}
+
+.todo_app-content-container{
+    background: white;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    margin: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo_app-filter-tabs{
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.todo_app-filter-button{
+    background: transparent;
+    padding: 0.2rem;
+    color: magenta;
+    cursor: pointer;
+    border: solid 1px magenta;
+}
+
+.todo_app-filter-button:hover{
+    background: yellow;
+    padding: 0.2rem;
+    color: magenta;
+    cursor: pointer;
+    border: solid 1px magenta;
+}
+
+.todo_app-filter-button:focus{
+    background: yellow;
+    padding: 0.2rem;
+    color: magenta;
+    cursor: pointer;
+    border: solid 1px magenta;
+}
+
+.todo_app-tasks-container{
+    display: flex;
+    flex: 1 1 auto;
+    margin: 1rem 0 1rem 0;
+    flex-direction: column;
+}
+
+.todo_app-task-new-item{
+    
+    justify-content: space-between;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+
+}
+
+.todo_app-task-item-button{
+    min-width: 4rem;
+    padding: 0.2rem;
+    background: transparent;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.todo_app-task-item-name input{
+    padding: 0.3rem 0.2rem 0.2rem 0.2rem;
+    border: none;
+}
+
+
+.todo_app-task-item-add{
+    margin-right: 0.4rem;
+    border-radius: 0.5rem;
+    background: black;
+    color: white;
+}
+
+.todo_app-task-item-priority{
+    padding: 0 0.4rem 0 0.4rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.in-progress{
+    background: blue;
+}
+
+.completed{
+    background: green!important;
+}
+
+.medium-priority{
+    border-radius: 0.7rem;
+    background: orange;
+    width: 0.2rem;
+    border: none;
+    min-width: 0;
+    width: 0.8rem;
+    height: 0.8rem;
+    min-height: 0;
+}
+
+.high-priority{
+    color: red!important;
+    font-weight: 800;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0.7rem;
+    background: transparent!important;
+    width: unset !important;
+    min-width: unset!important;
+    height: unset!important;
+    min-height: unset!important;
+}
+
 .todo_app-task-items{
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: 1px solid gray;
+
 }
+
+.todo_app-task-item-delete{
+    margin-right: 0.4rem;
+    border-radius: 0.5rem;
+    background: black;
+    color: white;
+    margin-left: 0.4rem;
+}
+
+.todo_app-task-item-sno{
+    display: flex;
+    flex: 1 1 auto;
+}
+.todo_app-task-item-sno span{
+    text-align: center;
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+    padding-right: 0.4rem;
+}
+
