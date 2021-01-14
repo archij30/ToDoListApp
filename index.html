@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>My TODO List</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body ng-app="toDoApp" ng-controller="toDoAppController as ctrl">
+        <div class="todo_app-container">
+            <div class="todo_app-header">
+                <div class="todo_app-header-date">
+                    {{dateTime| date:'dd-MM-yyyy'}}
+                </div>
+                <div class="todo_app-header-time">
+                    {{dateTime | date:'HH:mm:ss'}}
+                </div>
+                <div class="todo_app-header-quote">
+                    <input title="Edit quote" value="quote" type="text" ng-model="quote">
+                </div>
+            </div>
+
+            <div class="todo_app-content">
+                <div class="todo_app-filter-tabs">
+                    <button class="todo_app-filter-button">
+                        All
+                    </button>
+                    <button class="todo_app-filter-button">
+                        Active
+                    </button>
+                    <button class="todo_app-filter-button">
+                        Completed
+                    </button>
+                </div>
+                <div class="todo_app-tasks-container">
+                    <div class="todo_app-task-new-item">
+                        
+                        <div class="todo_app-task-item-add">
+                            <button class="todo_app-task-item-button" ng-click="ctrl.addNewTask()">
+                                Add
+                            </button>
+                        </div>
+                        <div class="todo_app-task-item-name">
+                            <input type="text" value="" placeholder="Enter task name" ng-model="ctrl.newTask.name">
+                        </div>
+                        <div class="todo_app-task-item-priority">
+                            <button class="todo_app-task-item-button" ng-click="ctrl.newTask.isHighPriority=!ctrl.newTask.isHighPriority">
+                                <span ng-if="!ctrl.newTask.isHighPriority">Medium</span>
+                                <span ng-if="ctrl.newTask.isHighPriority">High</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div ng-repeat="task in tasks" class="todo_app-task-items">
+                        
+                        <div class="todo_app-task-item-add">
+                            <label>{{$index+1}}</label>
+                        </div>
+                        <div class="todo_app-task-item-name">
+                            <input type="text" value="task.name" placeholder="Enter task name" ng-model="task.name">
+                        </div>
+                        <div class="todo_app-task-item-priority">
+                            <button class="todo_app-task-item-button" ng-click="task.isHighPriority=!task.isHighPriority">
+                                <span ng-if="!task.isHighPriority">Medium</span>
+                                <span ng-if="task.isHighPriority">High</span>
+                            </button>
+                        </div>
+                        <div class="todo_app-task-item-status">
+                            <button class="todo_app-task-item-button" ng-click="task.isCompleted=!task.isCompleted">
+                                <span ng-if="!task.isCompleted">In progress</span>
+                                <span ng-if="task.isCompleted">Completed</span>
+                            </button>
+                        </div>
+                        <div class="todo_app-task-item-delete">
+                            <button class="todo_app-task-item-button" ng-click="ctrl.deleteTask($index)">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="components/toDoAppController.js"></script>
+    </body>
+
+</html>
